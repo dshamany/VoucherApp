@@ -3,7 +3,7 @@ import './Styles.css';
 
 function Signup(props){
     return (
-        <div className="main-container">
+        <div className="main-container" id={props.id}>
             <div className="signup">
                 <h1>Signup</h1>
                 <div className="signup-form">
@@ -21,6 +21,7 @@ function Signup(props){
                         className='btn submit'
                         type='button'
                         value='Submit'
+                        onClick={() => console.log('Clicked')}
                     />
                 </div>
             </div>

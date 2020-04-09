@@ -8,9 +8,9 @@ import Signup from './Signup';
 function Index(props){
     return (
         <div className="main-container">
-            <Landing />
-            <About />
-            <Signup />
+            <Landing id="landing" />
+            <About id="about" />
+            <Signup id="signup"/>
         </div>
     )
 }
