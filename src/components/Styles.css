@@ -1,0 +1,134 @@
+:root {
+    --landing-bg: #999;
+    --about-bg: #fff;
+    --signup-bg: #222;
+    --light-text: #fff;
+    --dark-text: #111;
+    --general-radius: 5px;
+
+    --submit-color: rgb(0, 200, 0);
+    --submit-color-hover: rgb(100, 253, 100);
+    --cancel-color: rgb(180, 0, 0);
+    --cancel-color-hover: rgb(255, 130, 130);
+
+    --button-text-color: #fff;
+    --button-text-weight: bold;
+    --button-text-font: helvetica;
+    --button-text-size: 16px;
+    --button-shadow-color: rgb(100, 100, 100);
+    --button-inset-shadow-color: rgba(0, 0, 0, 0.7);
+    --input-shadow-color: #bbb;
+    --input-inset-shadow-color: rgba(0, 0, 0, 0.6);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.landing, .about, .signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.landing {
+    background-color: var(--landing-bg);
+    color: var(--dark-text);
+}
+
+.about {
+    background-color: var(--about-bg);
+    color: var(--dark-text);
+}
+
+.signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--signup-bg);
+    color: var(--light-text);
+    height: 30vh;
+}
+
+input[type='text'], input[type='email'] {
+    padding: 15px;
+    box-shadow: 2px 2px 3px var(--input-shadow-color),
+                inset 3px 3px 2px var(--input-inset-shadow-color);
+    border: 0px solid #000;
+    border-radius: var(--general-radius);
+}
+
+input[type="button"]{
+    outline:none;
+ }
+ 
+ input[type="button"]::-moz-focus-inner {
+    border: 0;
+ }
+
+ .signup-form {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     width: 270px;
+ }
+
+ .signup-form > input {
+     margin: 10px;
+ }
+
+ .action-bar {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: center;
+     width: 300px;
+     margin: 10px;
+ }
+
+.btn {
+    line-height: 40px;
+    height: 40px;
+    width: 100px;
+    box-shadow: 1px 1px 1px var(--button-inset-shadow-color), 
+                inset 2px 2px 2px var(--button-shadow-color);
+    border: 2px solid #000;
+    border-radius: var(--general-radius);
+    outline: none;
+    background-color: inherit;
+    color: var(--button-text-color);
+    font-weight: var(--button-text-weight);
+    font-family: var(--button-text-font);
+    font-size: var(--button-text-size);
+
+}
+
+.btn:active {
+    box-shadow: inset 1px 1px 1px var(--button-inset-shadow-color), 
+                3px 3px 3px var(--button-shadow-color);
+    line-height: 43px;
+}
+
+.submit {
+    color: var(--submit-color);
+}
+
+.submit:hover {
+    color: var(--submit-color-hover);
+}
+
+.cancel {
+    color: var(--cancel-color);
+}
+
+.cancel:hover {
+    color: var(--cancel-color-hover);
+}
