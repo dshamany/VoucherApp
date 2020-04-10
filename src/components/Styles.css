@@ -1,9 +1,11 @@
 :root {
-    --landing-bg: #444;
-    --about-bg: rgb(255, 255, 255);
+    --logo: rgb(54, 112, 199);
+
+    --landing-bg: #DDD;
+    --about-bg: var(--logo);
     --signup-bg: #444;
 
-    --signup-color: rgb(0, 145, 0);
+    --signup-color: var(--logo);
 
     --light-text: #fff;
     --dark-text: #111;
@@ -22,6 +24,8 @@
     
     --input-shadow-color: #bbb;
     --input-inset-shadow-color: rgba(0, 0, 0, 0.6);
+
+    --transition-speed: 0.1s;
 }
 
 html {
@@ -30,12 +34,21 @@ html {
 
 a {
     outline: none;
+    text-decoration: none;
 }
 
 #logo {
     width: 150px;
     height: 50px;
     margin-left: 10px;
+    filter: drop-shadow(2px 2px 2px var(--input-inset-shadow-color));
+    transition: var(--transition-speed) ease-out;
+}
+
+#logo:active {
+    filter: drop-shadow(2px 2px 2px var(--input-inset-shadow-color)) grayscale(100%);
+    margin-top: 3px;
+    margin-left: 12px;
 }
 
 #navbar {
@@ -63,11 +76,17 @@ a {
     margin: 0 15px;
     font-weight: bold;
     padding: 5px;
+    text-transform: uppercase;
+
 }
 
 #navbar > ul > li a {
     text-decoration: none;
-    color: #000;
+    color: var(--dark-text);
+}
+
+#navbar > ul > li a:hover {
+    color: var(--logo);
 }
 
 #navbar > ul > li:last-child > a {
@@ -75,6 +94,7 @@ a {
     border-radius: var(--general-radius);
     padding: 5px 10px;
     color: var(--signup-color);
+    transition: var(--transition-speed);
 }
 
 #navbar > ul > li:last-child > a:hover {
@@ -90,6 +110,10 @@ a {
     overflow: hidden;
 }
 
+.content {
+    max-width: 900px;
+}
+
 .landing, .about, .signup {
     display: flex;
     flex-direction: column;
@@ -102,12 +126,38 @@ a {
 .landing {
     background-color: var(--landing-bg);
     color: var(--dark-text);
-    color: white;
+    color: #111;
+}
+
+#punch-card {
+    width: 500px;
+    filter: drop-shadow(3px 3px 5px var(--dark-text));
+    rotate: 25deg;
+    margin: 50px;
+}
+
+#landing-description {
+    margin: 50px;
 }
 
 .about {
     background-color: var(--about-bg);
-    color: var(--dark-text);
+    color: var(--light-text);
+}
+
+.about > table > tr > td:last-child {
+    line-height: 80px;
+    float: left;
+    align-content: center;
+    margin-left: 20px;
+}
+
+.about > .btn > a {
+    color: #fff;
+}
+
+.about > .btn > a:hover {
+    color: #fff;
 }
 
 .signup {
@@ -170,6 +220,7 @@ input[type="button"]{
     font-weight: var(--button-text-weight);
     font-family: var(--button-text-font);
     font-size: var(--button-text-size);
+    transition: var(--transition-speed) ease-in;
 
 }
 

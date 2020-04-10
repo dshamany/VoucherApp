@@ -1,17 +1,17 @@
 import React from 'react';
 import './Styles.css';
 
-function Signup(props){
+function Signup(props) {
     return (
         <div className="main-container" id={props.id}>
             <div className="signup">
                 <h1>Signup</h1>
                 <div className="signup-form">
-                    <input 
+                    <input
                         placeholder='Full Name'
                         type='text'
                     />
-                    <input 
+                    <input
                         placeholder='Email Address'
                         type='email'
                     />

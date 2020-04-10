@@ -9,16 +9,18 @@ function Index(props) {
     return (
         <div>
             <div id="navbar">
+
                 <div id="logo-container">
-                    <a href="#">
+                    <a href="/#">
                         <img id="logo" src="https://i.imgur.com/TpRJ9wg.png" alt="company logo"/>
                     </a>
                 </div>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#signup">Sign Up</a></li>
-                </ul>
+                    <ul>
+                        <li><a href="/#about">About</a></li>
+                        <li><a href="/#signup">Sign Up</a></li>
+                    </ul>
             </div>
+
             <div className="main-container">
                 <Landing id="landing" />
                 <About id="about" />
