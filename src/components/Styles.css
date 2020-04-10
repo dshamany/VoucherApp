@@ -3,14 +3,14 @@
     --about-bg: rgb(255, 255, 255);
     --signup-bg: #444;
 
+    --signup-color: rgb(0, 145, 0);
+
     --light-text: #fff;
     --dark-text: #111;
     --general-radius: 5px;
 
     --submit-color: rgb(0, 255, 0);
-    --submit-color-hover: rgb(140, 255, 140);
     --cancel-color: rgb(180, 0, 0);
-    --cancel-color-hover: rgb(255, 130, 130);
 
     --button-text-color: inherit;
     --button-text-color-hover: rgb(255, 255, 255);
@@ -22,6 +22,63 @@
     
     --input-shadow-color: #bbb;
     --input-inset-shadow-color: rgba(0, 0, 0, 0.6);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    outline: none;
+}
+
+#logo {
+    width: 150px;
+    height: 50px;
+    margin-left: 10px;
+}
+
+#navbar {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    top: 0px;
+    left: 0px;
+    background-color: #fff;
+    height: 70px;
+    width: 100vw;
+}
+
+#navbar > ul {
+    list-style: none;
+    display: inline-flex;
+    flex-direction: row;
+    margin: 0 0 0 auto;
+}
+
+#navbar > ul > li {
+    margin: 0 15px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+#navbar > ul > li a {
+    text-decoration: none;
+    color: #000;
+}
+
+#navbar > ul > li:last-child > a {
+    border: 2px solid var(--signup-color);
+    border-radius: var(--general-radius);
+    padding: 5px 10px;
+    color: var(--signup-color);
+}
+
+#navbar > ul > li:last-child > a:hover {
+    background-color: var(--signup-color);
+    color: var(--light-text)
 }
 
 .main-container {
