@@ -10,7 +10,7 @@ function Index(props) {
         <div>
             <div id="navbar">
 
-                <div id="logo-container">
+                <div className="logo-container">
                     <a href="/#">
                         <img id="logo" src="https://i.imgur.com/TpRJ9wg.png" alt="company logo"/>
                     </a>

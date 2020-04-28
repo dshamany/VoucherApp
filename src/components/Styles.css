@@ -63,6 +63,7 @@ a {
     height: 70px;
     width: 100vw;
     box-shadow: 0px 5px 15px var(--input-inset-shadow-color);
+    z-index: 100;
 }
 
 #navbar > ul {
@@ -131,9 +132,11 @@ a {
 
 #punch-card {
     width: 500px;
-    filter: drop-shadow(3px 3px 5px var(--dark-text));
+    filter: drop-shadow(5px 5px 5px var(--dark-text));
     rotate: 25deg;
     margin: 50px;
+    border: 2px solid white;
+    border-radius: 18px;
 }
 
 #landing-description {
@@ -143,6 +146,11 @@ a {
 .about {
     background-color: var(--about-bg);
     color: var(--light-text);
+}
+
+.about > table > tr > td:first-child {
+    border-radius: 50%;
+    padding: 0 50px;
 }
 
 .about > table > tr > td:last-child {

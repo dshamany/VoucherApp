@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const PreUser = require('../models/preUser');
 const jwt = require('jsonwebtoken');
 
 const SECRET = process.env.SECRET;
@@ -7,6 +8,8 @@ module.exports = {
     sign,
     signup,
     signin,
+    enlist,
+    enlisted,
 }
 
 
@@ -49,4 +52,21 @@ async function signin(req, res){
 
 function createJWT(user){
     return jwt.sign({user}, SECRET, {expiresIn: '24h'});
+}
+
+async function enlist (req, res) {
+    let user = new PreUser(req.body);
+    try {
+        await user.save();
+        res.json(user);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+}
+
+function enlisted (req, res) {
+    PreUser.find({}, (err, allEnlisted) => {
+        if (err) res.status(400).json(err);
+        res.json(allEnlisted);
+    });
 }

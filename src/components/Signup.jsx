@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Styles.css';
 
+import {enlistPerson } from '../utils/signup';
+
 function Signup(props) {
+
+    const [fullname, setFullName] = useState('');
+    const [email, setEmail] = useState('');
+
     return (
         <div className="main-container" id={props.id}>
             <div className="signup">
@@ -10,10 +16,14 @@ function Signup(props) {
                     <input
                         placeholder='Full Name'
                         type='text'
+                        value={fullname}
+                        onChange={(e) => setFullName(e.target.value)}
                     />
                     <input
                         placeholder='Email Address'
                         type='email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div className="action-bar">
@@ -21,7 +31,15 @@ function Signup(props) {
                         className='btn submit'
                         type='button'
                         value='Submit'
-                        onClick={() => console.log('Clicked')}
+                        onClick={() => {
+                            const payload = {
+                                fullname,
+                                email
+                            }
+                            if (fullname && email) {
+                                enlistPerson(payload);
+                            }
+                        }}
                     />
                 </div>
             </div>
